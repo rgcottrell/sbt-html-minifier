@@ -15,8 +15,6 @@ var promised = {
 
 var args = jst.args(process.argv);
 var minifyOptions = args.options.minifyOptions || {};
-var inputExtension = args.options.inputExtension || '.html';
-var outputExtension = args.options.outputExtension || '.tmp.html';
 
 function processor(input, output) {
   return promised.readFile(input, "utf8").then(function(contents) {
@@ -57,4 +55,6 @@ function parseError(input, contents, err) {
   };
 }
 
-jst.process({processor: processor, inExt: inputExtension, outExt: outputExtension}, args);
+// HACK: pass input and output extensions that won't match to work around
+// JSTranspiler's extension mapping code to leave the file names unchanged.
+jst.process({processor: processor, inExt: '.~', outExt: '.~'}, args);
