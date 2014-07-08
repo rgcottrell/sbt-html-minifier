@@ -97,7 +97,7 @@ object SbtHtmlMinifier extends AutoPlugin {
         inputFiles =>
           streams.value.log("Minifying HTML files with html-minify")
 
-          val sourceFiles = JsArray(inputFiles.filter(_.isFile).map { f =>
+          val sourceFileMappings = JsArray(inputFiles.filter(_.isFile).map { f =>
             val relativePath = IO.relativize(appDir.value, f).get
             JsArray(JsString(f.getPath), JsString(relativePath))
           }.toList).toString()
@@ -140,7 +140,7 @@ object SbtHtmlMinifier extends AutoPlugin {
             (command in htmlMinifier).value,
             (nodeModuleDirectories in Plugin).value.map(_.getPath),
             shellFile,
-            Seq(sourceFiles, targetPath, jsOptions),
+            Seq(sourceFileMappings, targetPath, jsOptions),
             (timeoutPerSource in htmlMinifier).value * preMappings.size
           )
 
