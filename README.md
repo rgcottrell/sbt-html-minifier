@@ -1,5 +1,6 @@
 sbt-html-minifier
 =================
+[![Build Status](https://travis-ci.org/rgcottrell/sbt-html-minifier.svg?branch=master)](https://travis-ci.org/rgcottrell/sbt-html-minifier)
 
 An [sbt-web](https://github.com/sbt/sbt-web) plugin that uses [html-minifier](https://github.com/kangax/html-minifier)
 to minify HTML template files.

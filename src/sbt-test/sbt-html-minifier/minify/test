@@ -1,0 +1,6 @@
+# HTML minify files.
+
+> web-stage
+$ exists target/web/stage/index.html
+
+> checkFileContents
