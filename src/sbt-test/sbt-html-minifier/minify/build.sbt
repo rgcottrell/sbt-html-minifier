@@ -19,7 +19,7 @@ checkFileContents := {
   if (contents.contains("<!--")) {
     sys.error(s"Expected comments removed: $contents")
   }
-  if (!contents.contains(("  "))) {
+  if (contents.contains(("  "))) {
     sys.error(s"Expected collapsed whitespace: $contents")
   }
 }
