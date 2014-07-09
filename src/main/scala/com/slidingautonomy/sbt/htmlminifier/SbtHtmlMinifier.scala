@@ -60,7 +60,7 @@ object SbtHtmlMinifier extends AutoPlugin {
     collapseWhitespace := true,
     conservativeCollapse := false,
     excludeFilter in htmlMinifier := HiddenFileFilter,
-    htmlMinifier := runMinifier.dependsOn(webJarsNodeModules in Plugin).value,
+    htmlMinifier := runMinifier.dependsOn(nodeModules in Assets).value,
     keepClosingSlash := false,
     ignoreCustomComments := Seq(),
     includeFilter in htmlMinifier := GlobFilter("*.htm") | GlobFilter("*.html"),
