@@ -5,11 +5,16 @@ sbt-html-minifier
 An [sbt-web](https://github.com/sbt/sbt-web) plugin that uses [html-minifier](https://github.com/kangax/html-minifier)
 to minify HTML template files.
 
-To use the latest version from GitHub, add the following to the `project/plugins.sbt` of your project:
+Add the plugin to the `project/plugins.sbt` of your project:
 
 ```scala
-lazy val root = project.in(file(".")).dependsOn(sbtHtmlMinifier)
-lazy val sbtHtmlMinifier = uri("git://github.com/rgcottrell/sbt-html-minifier")
+addSbtPlugin("com.slidingautonomy.sbt" % "sbt-html-minifier" % "1.0.0")
+```
+
+Add the [Sonatype releases] resolver:
+
+```scala
+resolvers += Resolver.sonatypeRepo("releases")
 ```
 
 Your project's build file also needs to enable sbt-web plugins. For example with build.sbt:
