@@ -4,14 +4,13 @@ organization := "com.slidingautonomy.sbt"
 
 name := "sbt-html-minifier"
 
-version := "1.0.0"
+version := "1.0.1-SNAPSHOT"
 
 scalaVersion := "2.10.4"
 
 scalacOptions += "-feature"
 
 libraryDependencies ++= Seq(
-  "com.typesafe" % "jstranspiler" % "1.0.0",
   "org.webjars" % "mkdirp" % "0.3.5",
   "org.webjars" % "when-node" % "3.2.2"
 )
