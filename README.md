@@ -11,12 +11,6 @@ Add the plugin to the `project/plugins.sbt` of your project:
 addSbtPlugin("com.slidingautonomy.sbt" % "sbt-html-minifier" % "1.0.0")
 ```
 
-Add the [Sonatype releases] resolver:
-
-```scala
-resolvers += Resolver.sonatypeRepo("releases")
-```
-
 Your project's build file also needs to enable sbt-web plugins. For example with build.sbt:
 
 ```scala
